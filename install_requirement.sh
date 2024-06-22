@@ -11,7 +11,7 @@ sudo apt install docker-ce -y
 sudo usermod -aG docker $USER
 newgrp docker
 
-sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep -oP 'tag_name": "\K(.*)(?=")')" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.19.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 docker --version
