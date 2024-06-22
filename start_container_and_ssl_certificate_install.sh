@@ -1,9 +1,10 @@
 #!/bin/bash
-
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <domain>"
     exit 1
 fi
+
+docker-compose up -d
 
 domain="$1"
 
@@ -46,10 +47,3 @@ EOF
 sudo a2ensite wordpress.conf
 sudo a2enmod ssl
 sudo systemctl reload apache2
-
-echo "# install-docker" >> README.md
-git commit --author "Forward489" -m "feat: initiation stage"
-git branch -M main
-git remote add origin https://github.com/map-it-out/install-docker.git
-git push -u origin main
-
