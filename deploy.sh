@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Check if DOMAIN parameter is provided
+if [ -z "$1" ]; then
+    echo "Error: DOMAIN parameter is missing."
+    exit 1
+fi
+
 # Variables - replace these with your own values
 DOMAIN="$1"
 
